@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+<p style="font-size:20pt;">Profile data form on WebView</p>
+<form onsubmit='return onSubmit(this)'>
+    <input id="name" style="height:50px;width:300px;font-size:20pt;" type="text" value="">
+    <input id="location" style="height:50px;width:300px;font-size:20pt;" type="text" value="">
+    <input id="age" style="height:50px;width:300px;font-size:20pt;" type="text" value="">
+</form>
+<br><br>
+<input onClick="sendData()" style="height:50px;width:300px;font-size:20pt;" type="button"
+       value="Send data to native"/>
+
+<script type="text/javascript">
+    function sendData() {
+
+        WebBridge.receiveDataFromWeb(makeJson());
+    }
+    function updateFromNative(data){
+		document.getElementById("name").value = data.name;
+		document.getElementById("location").value = data.location;
+		document.getElementById("age").value = data.age;
+    }
+    function makeJson() {
+        var jsonFile = null;
+
+      var nameInput = document.getElementById('name'),
+          locationInput = document.getElementById('location'),
+          ageInput = document.getElementById('age');
+
+        var arr = {
+          "name": nameInput.value,
+          "location": locationInput.value,
+          "age": ageInput.value
+        };
+
+        var json = JSON.stringify(arr, null, 3);
+
+        return json;
+    }
+</script>
+<style>
+	body {
+	background-color: #93B874
+	}
+</style>
+</body>
+</html>

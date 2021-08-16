@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Web Native Data Communication</string>
+    <string name="native_side">Native side</string>
+    <string name="age">Age</string>
+    <string name="location">Location</string>
+    <string name="name">Name</string>
+</resources>
