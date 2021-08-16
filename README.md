@@ -1,5 +1,5 @@
-# Web View and Native layer communication
+# Android with WebView communication
 
-Shows how to communicate from Embedded WebView togit init Native layer and vice-versa.
+Example that shows communication between android native and web.
 
-Using JavaScript bridge, the same can be achieved conveniently.
+Using web bridge and javascript data can be both send and received from native to web.
